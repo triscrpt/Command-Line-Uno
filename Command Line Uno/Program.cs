@@ -10,6 +10,7 @@ namespace Command_Line_Uno
     {
         static void Main(string[] args)
         {
+            Console.ReadKey();
         }
     }
 }

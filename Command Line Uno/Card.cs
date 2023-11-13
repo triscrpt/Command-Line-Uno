@@ -11,10 +11,10 @@ namespace Command_Line_Uno
         private string colour;
         private string face;
 
-        public Card(string cardFace, string cardColour)
+        public Card(string cardColour, string cardFace)
         {
-            face = cardFace;
             colour = cardColour;
+            face = cardFace;
         }
 
         public override string ToString()
