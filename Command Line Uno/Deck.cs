@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,16 @@ namespace Command_Line_Uno
             currentCard = 0;
             ranNum = new Random();
 
+            // Populate the deck with cards
+            PopulateDeck(colours, faces);
+
+
+            // Shuffle the deck
+            ShuffleDeck();
+        }
+
+        private void PopulateDeck(string[] colours, string[] faces)
+        {
             // Populate the deck with cards
             int cardIndex = 0;
 
@@ -50,9 +61,6 @@ namespace Command_Line_Uno
                     cardIndex++;
                 }
             }
-
-            // Shuffle the deck
-            ShuffleDeck();
         }
 
         private void ShuffleDeck()
