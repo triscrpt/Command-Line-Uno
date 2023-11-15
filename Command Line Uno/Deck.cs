@@ -66,14 +66,22 @@ namespace Command_Line_Uno
         private void ShuffleDeck()
         {
             currentCard = 0;
-            for (int first = 0; first < deck.Length; first++)
+            for (int first = 0; first < deck.Length; first++) // Repeat for whole deck
             {
-                int second = ranNum.Next(NUMBER_OF_CARDS);
-                Card temp = deck[first];
-                deck[first] = deck[second];
+                int second = ranNum.Next(NUMBER_OF_CARDS); // Select random card
+                Card temp = deck[first]; 
+                deck[first] = deck[second]; // Swap current card with the randomly selected card
                 deck[second] = temp;
             }
         }
+
+        public Card DealCard()
+        {
+            if (currentCard < deck.Length) // Check in bounds
+                return deck[currentCard++];
+            else return null;
+        }
+
 
 
         // Temporary print so i can check it gets all cards
