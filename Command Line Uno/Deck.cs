@@ -81,18 +81,5 @@ namespace Command_Line_Uno
                 return deck[currentCard++];
             else return null;
         }
-
-
-
-        // Temporary print so i can check it gets all cards
-        public void TempPrint()
-        {
-            int count = 1;
-            foreach (Card card in deck)
-            {
-                Console.WriteLine(count + ": " + card);
-                count++;
-            }
-        }
     }
 }

@@ -12,7 +12,8 @@ namespace Command_Line_Uno
         {
             Deck deck = new Deck();
 
-            deck.TempPrint();
+            for (int i = 0; i < 108; i++)
+                Console.WriteLine(deck.DealCard());
 
             Console.ReadKey();
         }

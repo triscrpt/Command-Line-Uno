@@ -11,7 +11,7 @@ namespace Command_Line_Uno
         private string colour;
         private string face;
 
-        public Card(string cardColour, string cardFace)
+        public Card(string cardFace, string cardColour)
         {
             colour = cardColour;
             face = cardFace;
