@@ -65,7 +65,14 @@ namespace Command_Line_Uno
 
         private void ShuffleDeck()
         {
-            // Implement deck shuffle
+            currentCard = 0;
+            for (int first = 0; first < deck.Length; first++)
+            {
+                int second = ranNum.Next(NUMBER_OF_CARDS);
+                Card temp = deck[first];
+                deck[first] = deck[second];
+                deck[second] = temp;
+            }
         }
 
 
