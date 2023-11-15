@@ -10,6 +10,10 @@ namespace Command_Line_Uno
     {
         static void Main(string[] args)
         {
+            Deck deck = new Deck();
+
+            deck.TempPrint();
+
             Console.ReadKey();
         }
     }

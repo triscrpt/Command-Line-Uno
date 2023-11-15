@@ -15,22 +15,60 @@ namespace Command_Line_Uno
 
         public Deck()
         {
-            string[] faces = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "skip", "reverse", "+2", "change colour", "+4" };
-            string[] colours = { "red", "blue", "yellow", "green", "wild" };
+            // Store all seperate possible card values (except 0's and wild which needs to be populated more manually)
+            string[] faces = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "skip", "reverse", "+2", "change colour", "+4" };
+            string[] colours = { "red", "blue", "yellow", "green" };
 
             deck = new Card[NUMBER_OF_CARDS];
             currentCard = 0;
             ranNum = new Random();
 
+            // Populate the deck with cards
+            int cardIndex = 0;
 
-            for (int i = 0; i < deck.Length; i++)
+            // Populate colored cards
+            foreach (string color in colours)
             {
-                for (int j = 0; j < j; j++)
+                deck[cardIndex] = new Card("0", color); // Populate 0's seperately
+                cardIndex++;
+                for (int i = 0; i < 2; i++) // Two sets for each colored card
                 {
-                    deck[i] = new Card(faces[i], colours[j]);
-
+                    foreach (string face in faces.Take(12)) // Take the next 12 faces for colored cards
+                    {
+                        deck[cardIndex] = new Card(face, color);
+                        cardIndex++;
+                    }
                 }
+            }
 
+            // Populate special wild cards
+            for (int i = 0; i < 4; i++) // Four of each "wild" card
+            {
+                foreach (string face in faces.Skip(12)) // Skip the first 12 faces for special wild cards
+                {
+                    deck[cardIndex] = new Card(face, "wild");
+                    cardIndex++;
+                }
+            }
+
+            // Shuffle the deck
+            ShuffleDeck();
+        }
+
+        private void ShuffleDeck()
+        {
+            // Implement deck shuffle
+        }
+
+
+        // Temporary print so i can check it gets all cards
+        public void TempPrint()
+        {
+            int count = 1;
+            foreach (Card card in deck)
+            {
+                Console.WriteLine(count + ": " + card);
+                count++;
             }
         }
     }
