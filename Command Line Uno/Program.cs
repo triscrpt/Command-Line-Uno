@@ -12,7 +12,7 @@ namespace Command_Line_Uno
         {
             Deck deck = new Deck();
 
-            for (int i = 0; i < 108; i++)
+            for (int i = 0; i < deck.deckLength; i++)
                 Console.WriteLine(deck.DealCard());
 
             Console.ReadKey();

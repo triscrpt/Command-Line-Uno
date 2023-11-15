@@ -32,6 +32,11 @@ namespace Command_Line_Uno
             ShuffleDeck();
         }
 
+        public int deckLength
+        {
+            get {  return deck.Length; }
+        }
+
         private void PopulateDeck(string[] colours, string[] faces)
         {
             // Populate the deck with cards
